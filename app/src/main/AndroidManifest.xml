@@ -35,7 +35,7 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".Splash">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -43,12 +43,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".InfoActivity" />
-        <activity android:name=".InfoAvailable" />
+        <activity android:name=".InfoAvailableActivity" />
         <activity android:name=".Information" />
         <activity android:name=".AfterSubmit" />
-        <activity android:name=".aboutActivity" />
-        <activity android:name=".faqactivity" />
-        <activity android:name=".contact"></activity>
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".FaqActivity" />
+        <activity android:name=".ContactActivity"></activity>
     </application>
 
 </manifest>

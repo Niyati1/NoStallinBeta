@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,7 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 @Keep
-public class InfoAvailable extends AppCompatActivity {
+public class InfoAvailableActivity extends AppCompatActivity {
 
     public Button add_more_info;
     public  TextView location;
@@ -61,7 +60,7 @@ public class InfoAvailable extends AppCompatActivity {
         add_more_info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(InfoAvailable.this,Information.class);
+                Intent i = new Intent(InfoAvailableActivity.this,Information.class);
                 i.putExtra("Name",name_intent);
                 i.putExtra("Id",id_intent);
                 i.putExtra("Add",add_intent);

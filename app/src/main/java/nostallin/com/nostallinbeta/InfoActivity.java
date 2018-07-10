@@ -121,7 +121,7 @@ public class InfoActivity extends AppCompatActivity {
                 }
                 else if (isPresent){
                     //code when  info is found
-                    Intent info = new Intent(InfoActivity.this,InfoAvailable.class);
+                    Intent info = new Intent(InfoActivity.this,InfoAvailableActivity.class);
                     Bundle args = new Bundle();
                     args.putParcelable("Latlng",place1.getLatLng());
                     info.putExtra("bundle",args);

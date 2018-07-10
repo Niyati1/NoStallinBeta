@@ -3,12 +3,12 @@ package nostallin.com.nostallinbeta;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class aboutActivity extends AppCompatActivity {
+public class FaqActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about);
+        setContentView(R.layout.activity_faqactivity);
     }
 
     @Override

@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if (isPresent){
                     //code when  info is found
-                    Intent info = new Intent(MainActivity.this,InfoAvailable.class);
+                    Intent info = new Intent(MainActivity.this,InfoAvailableActivity.class);
                     Bundle args = new Bundle();
                     args.putParcelable("Latlng",place1.getLatLng());
                     info.putExtra("bundle",args);
@@ -143,15 +143,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) { switch(item.getItemId()) {
         case R.id.about:
-            Intent about = new Intent(this, aboutActivity.class);
+            Intent about = new Intent(this, AboutActivity.class);
             startActivity(about);
             return(true);
         case R.id.faq:
-            Intent faq =  new Intent(this, faqactivity.class);
+            Intent faq =  new Intent(this, FaqActivity.class);
             startActivity(faq);
             return(true);
         case R.id.contact:
-            Intent contact=  new Intent(this, contact.class);
+            Intent contact=  new Intent(this, ContactActivity.class);
             startActivity(contact);
             return(true);
 
