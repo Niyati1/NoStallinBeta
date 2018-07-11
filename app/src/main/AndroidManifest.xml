@@ -13,13 +13,16 @@
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activities.MainActivity">
+
+        <activity android:name=".ui.activities.MainActivity"
+            android:screenOrientation="userPortrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -34,21 +37,38 @@
 
         <activity
             android:name=".ui.activities.MapsActivity"
+            android:screenOrientation="userPortrait"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".ui.activities.SplashActivity">
+
+        <activity android:name=".ui.activities.SplashActivity"
+            android:screenOrientation="userPortrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activities.InfoActivity" />
-        <activity android:name=".ui.activities.InfoAvailableActivity" />
-        <activity android:name=".ui.activities.InformationActivity" />
-        <activity android:name=".ui.activities.AfterSubmitActivity" />
-        <activity android:name=".ui.activities.AboutActivity" />
-        <activity android:name=".ui.activities.FaqActivity" />
-        <activity android:name=".ui.activities.ContactActivity"></activity>
+
+        <activity android:name=".ui.activities.InfoActivity"
+            android:screenOrientation="userPortrait"/>
+
+        <activity android:name=".ui.activities.InfoAvailableActivity"
+            android:screenOrientation="userPortrait"/>
+
+        <activity android:name=".ui.activities.InformationActivity"
+            android:screenOrientation="userPortrait"/>
+
+        <activity android:name=".ui.activities.AfterSubmitActivity"
+            android:screenOrientation="userPortrait"/>
+
+        <activity android:name=".ui.activities.AboutActivity"
+            android:screenOrientation="userPortrait"/>
+
+        <activity android:name=".ui.activities.FaqActivity"
+            android:screenOrientation="userPortrait"/>
+
+        <activity android:name=".ui.activities.ContactActivity"
+            android:screenOrientation="userPortrait"/>
     </application>
 
 </manifest>

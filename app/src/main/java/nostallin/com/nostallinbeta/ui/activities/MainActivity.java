@@ -1,24 +1,15 @@
 package nostallin.com.nostallinbeta.ui.activities;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
-import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
@@ -29,17 +20,28 @@ import nostallin.com.nostallinbeta.usecase.CheckIfPlaceExistsUseCase;
 
 public class MainActivity extends AppCompatActivity {
 
+    // region Constants
+
     private static final int PLACE_PICKER_CODE = 1;
 
-    Button lokkingButton;
-    Button wentButton;
+    // endregion
+
+    // region Views
+
+    private Button lokkingButton;
+    private Button wentButton;
+
+    // endregion
+    
+    // region Private Members
 
     CheckIfPlaceExistsUseCase useCase;
     Disposable useCaseDisposable;
     MainNavigator navigator;
 
-    String id;
-    Place place;
+    // endregion
+
+    // region Lifecycle
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,9 +74,8 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == PLACE_PICKER_CODE) {
             if (resultCode == RESULT_OK) {
                 final Place place = PlacePicker.getPlace(this, data);
-                id = place.getId();
 
-                useCaseDisposable = useCase.execute(id)
+                useCaseDisposable = useCase.execute(place.getId())
                         .subscribe(new Consumer<Boolean>() {
                             @Override
                             public void accept(Boolean isPresent) {
@@ -86,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
                                 }
                             }
                         });
-                this.place = place;
             }
         }
     }
@@ -125,4 +125,6 @@ public class MainActivity extends AppCompatActivity {
 
         return (super.onOptionsItemSelected(item));
     }
+
+    // endregion
 }
