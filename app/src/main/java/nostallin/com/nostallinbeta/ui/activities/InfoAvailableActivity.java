@@ -1,4 +1,4 @@
-package nostallin.com.nostallinbeta;
+package nostallin.com.nostallinbeta.ui.activities;
 
 import android.content.Intent;
 import android.support.annotation.Keep;
@@ -14,6 +14,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import nostallin.com.nostallinbeta.R;
 
 @Keep
 public class InfoAvailableActivity extends AppCompatActivity {
@@ -60,7 +62,7 @@ public class InfoAvailableActivity extends AppCompatActivity {
         add_more_info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(InfoAvailableActivity.this,Information.class);
+                Intent i = new Intent(InfoAvailableActivity.this,InformationActivity.class);
                 i.putExtra("Name",name_intent);
                 i.putExtra("Id",id_intent);
                 i.putExtra("Add",add_intent);

@@ -1,7 +1,9 @@
-package nostallin.com.nostallinbeta;
+package nostallin.com.nostallinbeta.ui.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import nostallin.com.nostallinbeta.R;
 
 public class FaqActivity extends AppCompatActivity {
 

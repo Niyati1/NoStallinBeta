@@ -1,9 +1,11 @@
-package nostallin.com.nostallinbeta;
+package nostallin.com.nostallinbeta.ui.activities;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Bundle;
+
+import nostallin.com.nostallinbeta.R;
 
 public class SplashActivity extends Activity {
 

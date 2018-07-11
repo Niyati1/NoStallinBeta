@@ -1,67 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content" >
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="nostallin.com.nostallinbeta.MainActivity"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp">
+        tools:context="nostallin.com.nostallinbeta.ui.activities.MainActivity"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/activity_main_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_margin="10dp"
             android:layout_marginTop="25dp"
-            android:textSize="35dp"
-            android:textStyle="bold|italic"
             android:gravity="center_horizontal|center_vertical"
-            android:text="@string/welcome_text" />
+            android:text="@string/welcome_text"
+            android:textSize="@dimen/TextSize.Heading"
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/activity_main_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/welcome_description"
             android:layout_margin="10dp"
-            android:textSize="20sp"
-            />
-
-
+            android:text="@string/welcome_description"
+            android:textSize="@dimen/TextSize.Body" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/togo"
-                android:layout_width="176dp"
-                android:layout_margin="10dp"
+                android:id="@+id/activity_main_looking"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:background="@color/green"
-                android:text="Looking to GO" />
+                android:layout_margin="16dp"
+                android:padding="8dp"
+                android:background="@drawable/bg_main_btn"
+                android:text="@string/Main.Button.Looking"
+                android:textColor="@color/md_white"/>
 
             <Button
-                android:id="@+id/went"
-                android:layout_width="164dp"
-                android:layout_margin="10dp"
+                android:id="@+id/activity_main_went"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:background="@color/green"
-                android:text="Already Went" />
+                android:layout_margin="16dp"
+                android:padding="8dp"
+                android:background="@drawable/bg_main_btn"
+                android:text="@string/Main.Button.Went"
+                android:textColor="@color/md_white"/>
 
         </LinearLayout>
-
-
     </LinearLayout>
 </ScrollView>

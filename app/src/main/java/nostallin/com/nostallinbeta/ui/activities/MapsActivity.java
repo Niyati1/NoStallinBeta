@@ -1,4 +1,4 @@
-package nostallin.com.nostallinbeta;
+package nostallin.com.nostallinbeta.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,6 +22,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import nostallin.com.nostallinbeta.R;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
 
@@ -135,7 +137,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onInfoWindowClick(Marker marker) {
         if(check==1) {
-            Intent i = new Intent(this, Information.class);
+            Intent i = new Intent(this, InformationActivity.class);
             i.putExtra("Name", Name);
             i.putExtra("Id", Id);
             i.putExtra("Add", add);

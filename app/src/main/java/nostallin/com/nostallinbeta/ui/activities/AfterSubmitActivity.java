@@ -1,4 +1,4 @@
-package nostallin.com.nostallinbeta;
+package nostallin.com.nostallinbeta.ui.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,13 +8,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class AfterSubmit extends AppCompatActivity {
+import nostallin.com.nostallinbeta.R;
+
+public class AfterSubmitActivity extends AppCompatActivity {
 
     Button feedback;
     Button done;
@@ -34,7 +34,7 @@ public class AfterSubmit extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finishAffinity();
-                Intent i = new Intent(AfterSubmit.this, MainActivity.class);
+                Intent i = new Intent(AfterSubmitActivity.this, MainActivity.class);
                 startActivity(i);
             }
         });
@@ -42,7 +42,7 @@ public class AfterSubmit extends AppCompatActivity {
         done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(AfterSubmit.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(AfterSubmitActivity.this);
 
                 builder.setTitle("Confirm");
                 builder.setMessage("Are you sure you want to exit app?");

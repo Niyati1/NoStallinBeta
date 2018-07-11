@@ -1,4 +1,4 @@
-package nostallin.com.nostallinbeta;
+package nostallin.com.nostallinbeta.ui.activities;
 
 import android.content.Intent;
 import android.support.annotation.Keep;
@@ -18,8 +18,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import nostallin.com.nostallinbeta.GlobalValues;
+import nostallin.com.nostallinbeta.R;
+
 @Keep
-public class Information extends AppCompatActivity {
+public class InformationActivity extends AppCompatActivity {
 
     EditText stall,floor_number;
     String no_of_stalls,no_of_floor;
@@ -84,7 +87,7 @@ public class Information extends AppCompatActivity {
 
                 }
                 check1(id_intent, name_intent, add_intent, no_of_stalls,no_of_floor,total_hits,atleast_one_stall,all_stalls,no_stalls,gn_yes,gn_no);
-                Intent after = new Intent(Information.this,AfterSubmit.class);
+                Intent after = new Intent(InformationActivity.this,AfterSubmitActivity.class);
                 startActivity(after);
                 finish();
             }

@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,22 +33,22 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name=".ui.activities.MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".ui.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".InfoActivity" />
-        <activity android:name=".InfoAvailableActivity" />
-        <activity android:name=".Information" />
-        <activity android:name=".AfterSubmit" />
-        <activity android:name=".AboutActivity" />
-        <activity android:name=".FaqActivity" />
-        <activity android:name=".ContactActivity"></activity>
+        <activity android:name=".ui.activities.InfoActivity" />
+        <activity android:name=".ui.activities.InfoAvailableActivity" />
+        <activity android:name=".ui.activities.InformationActivity" />
+        <activity android:name=".ui.activities.AfterSubmitActivity" />
+        <activity android:name=".ui.activities.AboutActivity" />
+        <activity android:name=".ui.activities.FaqActivity" />
+        <activity android:name=".ui.activities.ContactActivity"></activity>
     </application>
 
 </manifest>
