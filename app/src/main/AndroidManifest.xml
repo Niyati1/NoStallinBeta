@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="nostallin.com.nostallinbeta">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,7 +13,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
 
         <activity android:name=".ui.activities.MainActivity"
             android:screenOrientation="userPortrait">
@@ -33,7 +35,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value="AIzaSyDn7PnfJxiW54H60aaImG1v2Dqj3fhCvFw" />
 
         <activity
             android:name=".ui.activities.MapsActivity"
@@ -48,6 +50,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".ui.OnboardingActivity"
+            android:screenOrientation="userPortrait"/>
 
         <activity android:name=".ui.activities.InfoActivity"
             android:screenOrientation="userPortrait"/>

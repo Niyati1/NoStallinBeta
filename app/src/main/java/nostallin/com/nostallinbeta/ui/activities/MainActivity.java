@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private Button wentButton;
 
     // endregion
-    
+
     // region Private Members
 
     CheckIfPlaceExistsUseCase useCase;
