@@ -11,6 +11,7 @@ import android.widget.Button;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
 
+import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import nostallin.com.nostallinbeta.R;
@@ -78,13 +79,18 @@ public class MainActivity extends AppCompatActivity {
                 useCaseDisposable = useCase.execute(place.getId())
                         .subscribe(new Consumer<Boolean>() {
                             @Override
-                            public void accept(Boolean isPresent) {
+                            public void accept(Boolean isPresent) throws Exception {
                                 if (!isPresent) {
                                     navigator.goToInfoActivity(place);
                                 } else {
                                     navigator.goToInfoAvailableActivity(place);
 
                                 }
+                            }
+                        }, new Consumer<Throwable>() {
+                            @Override
+                            public void accept(Throwable throwable) throws Exception {
+                                navigator.goToInfoAvailableActivity(place);
                             }
                         });
             }

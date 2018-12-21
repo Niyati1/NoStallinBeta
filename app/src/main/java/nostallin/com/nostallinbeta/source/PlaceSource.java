@@ -1,6 +1,7 @@
 package nostallin.com.nostallinbeta.source;
 
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.google.android.gms.location.places.Place;
 import com.google.firebase.database.DataSnapshot;
@@ -28,16 +29,22 @@ public class PlaceSource {
         databaseRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                boolean wasFound = false;
                 for (DataSnapshot obj : dataSnapshot.getChildren()) {
                     if (obj.getKey() != null && obj.getKey().equalsIgnoreCase(id)) {
                         placeSubject.onNext(Objects.requireNonNull(obj.getValue(Place.class)));
+                        wasFound = true;
                     }
+                }
+
+                if (!wasFound) {
+                    placeSubject.onError(new RuntimeException());
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                Log.e("PLACE_SOURCE", databaseError.getDetails());
             }
         });
 
