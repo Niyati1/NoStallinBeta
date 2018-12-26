@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/md_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/material_layout_keylines_screen_edge_margin"
+            android:layout_marginTop="@dimen/material_layout_keylines_screen_edge_margin"
+            android:text="@string/PlaceInfo.Question.HowMany"
+            android:textSize="@dimen/material_typography_subheading"
+            android:textColor="@color/md_grey800"
+            android:fontFamily="@font/raleway_semibold"/>
+
+        <RadioGroup
+            android:id="@+id/stallCountRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/material_layout_keylines_screen_edge_margin"
+            android:layout_marginTop="@dimen/material_layout_vertical_spacing_between_content_areas">
+
+            <RadioButton
+                android:id="@+id/atLeastOneStall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_regular"
+                android:checked="true"
+                android:text="@string/PlaceInfo.Radio.HowMany.AtLeastOne"
+                android:textSize="@dimen/material_typography_caption"/>
+
+            <RadioButton
+                android:id="@+id/moreThanOneStall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_regular"
+                android:text="@string/PlaceInfo.Radio.HowMany.MoreThanOne"
+                android:textSize="@dimen/material_typography_caption" />
+
+            <RadioButton
+                android:id="@+id/noStalls"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_regular"
+                android:text="@string/PlaceInfo.Radio.HowMany.None"
+                android:textSize="@dimen/material_typography_caption"/>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/material_layout_keylines_screen_edge_margin"
+            android:layout_marginStart="@dimen/material_layout_keylines_screen_edge_margin"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="@string/PlaceInfo.Question.Doors"
+            android:textSize="@dimen/material_typography_subheading"
+            android:textColor="@color/md_grey800"/>
+
+        <RadioGroup
+            android:id="@+id/doorCountRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/material_layout_keylines_screen_edge_margin"
+            android:layout_marginTop="@dimen/material_layout_vertical_spacing_between_content_areas">
+
+            <RadioButton
+                android:id="@+id/atLeastOneDoor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:fontFamily="@font/raleway_regular"
+                android:text="@string/PlaceInfo.Radio.Doors.AtLeastOne"
+                android:textSize="@dimen/material_typography_caption"/>
+
+            <RadioButton
+                android:id="@+id/moreThanOneDoor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_regular"
+                android:text="@string/PlaceInfo.Radio.Doors.Some"
+                android:textSize="@dimen/material_typography_caption" />
+
+            <RadioButton
+                android:id="@+id/allDoors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_regular"
+                android:text="@string/PlaceInfo.Radio.Doors.All"
+                android:textSize="@dimen/material_typography_caption"/>
+
+            <RadioButton
+                android:id="@+id/noDoors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_regular"
+                android:text="@string/PlaceInfo.Radio.Doors.None"
+                android:textSize="@dimen/material_typography_caption"/>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/material_layout_keylines_screen_edge_margin"
+            android:layout_marginStart="@dimen/material_layout_keylines_screen_edge_margin"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="@string/PlaceInfo.Question.GenderNeutral"
+            android:textSize="@dimen/material_typography_subheading"
+            android:textColor="@color/md_grey800"/>
+
+        <RadioGroup
+            android:id="@+id/genderNeutralGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/material_layout_keylines_screen_edge_margin"
+            android:layout_marginTop="@dimen/material_layout_vertical_spacing_between_content_areas">
+
+            <RadioButton
+                android:id="@+id/genderNeutralYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:fontFamily="@font/raleway_regular"
+                android:text="@string/PlaceInfo.Radio.Yes"
+                android:textSize="@dimen/material_typography_caption"/>
+
+            <RadioButton
+                android:id="@+id/genderNeutralNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_regular"
+                android:text="@string/PlaceInfo.Radio.No"
+                android:textSize="@dimen/material_typography_caption"/>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/material_layout_keylines_screen_edge_margin"
+            android:layout_marginStart="@dimen/material_layout_keylines_screen_edge_margin"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="@string/PlaceInfo.Question.Floor"
+            android:textSize="@dimen/material_typography_subheading"
+            android:textColor="@color/md_grey800"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/material_layout_keylines_screen_edge_margin"
+            android:layout_marginTop="@dimen/material_layout_vertical_spacing_between_content_areas"
+            android:layout_marginEnd="@dimen/material_layout_keylines_screen_edge_margin"
+            android:fontFamily="@font/raleway_regular"
+            android:gravity="center">
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/floorNumberEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="@string/PlaceInfo.Hint.Floor"
+                android:inputType="numberDecimal"
+                android:fontFamily="@font/raleway_regular"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/floorNumberError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/material_layout_keylines_screen_edge_margin"
+            android:layout_marginTop="@dimen/material_layout_vertical_spacing_between_content_areas"
+            android:fontFamily="@font/raleway_regular"
+            android:text="@string/PlaceInfo.Error.Floor"
+            android:textSize="@dimen/material_typography_error"
+            android:textColor="@color/md_red500"
+            android:visibility="gone"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/material_layout_keylines_screen_edge_margin"
+            android:background="@drawable/bg_main_btn"
+            android:fontFamily="@font/raleway_medium"
+            android:text="@string/PlaceInfo.Submit"
+            android:textColor="@color/md_white"/>
+
+    </LinearLayout>
+
+</ScrollView>

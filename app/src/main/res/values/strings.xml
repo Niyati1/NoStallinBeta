@@ -1,5 +1,6 @@
-<resources>
-    <string name="app_name">NoStallinApp</string>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ExtraTranslation">
+    <string name="app_name">No Stallin</string>
     <string name="google_place_api">AIzaSyAp3pmCiv9WGuMHMDvdLkKft-gfeU5rts4</string>
     <string name="title_activity_maps">Map</string>
     <string name="welcome_text">Welcome!</string>
@@ -11,5 +12,32 @@
     <string name="contact"><b><u>Email:</u></b> nostallinapp@gmail.com</string>
     <string name="Main.Button.Looking">Looking to go</string>
     <string name="Main.Button.Went">Already Went</string>
+
+    <!--region Place Info-->
+    <string name="PlaceInfo.Question.HowMany">How many stalls in the men\'s room?</string>
+    <string name="PlaceInfo.Question.Doors">How many stalls have doors?</string>
+    <string name="PlaceInfo.Question.GenderNeutral">Is there also a gender-neutral bathroom?</string>
+    <string name="PlaceInfo.Question.Floor">Which floor are you on?</string>
+
+    <string name="PlaceInfo.Hint.Floor">Floor number</string>
+
+    <string name="PlaceInfo.Radio.HowMany.AtLeastOne">At least one stall</string>
+    <string name="PlaceInfo.Radio.HowMany.MoreThanOne">More than one</string>
+    <string name="PlaceInfo.Radio.HowMany.None">None</string>
+
+    <string name="PlaceInfo.Radio.Doors.AtLeastOne">At least one stall</string>
+    <string name="PlaceInfo.Radio.Doors.Some">Some, not all</string>
+    <string name="PlaceInfo.Radio.Doors.All">All stalls</string>
+    <string name="PlaceInfo.Radio.Doors.None">None</string>
+
+    <string name="PlaceInfo.Radio.Yes">Yes</string>
+    <string name="PlaceInfo.Radio.No">No</string>
+
+    <string name="PlaceInfo.Error.Floor">This field cannot be blank</string>
+
+    <string name="PlaceInfo.Submit">Submit</string>
+    <string name="PlaceInfo.Success">Success</string>
+    <string name="Dialog.Progress.Submitting">Submitting…</string>
+    <!--endregion-->
 
 </resources>

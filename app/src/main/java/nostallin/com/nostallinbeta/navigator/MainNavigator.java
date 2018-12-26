@@ -9,12 +9,12 @@ import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
 
+import nostallin.com.nostallinbeta.model.PlaceStub;
 import nostallin.com.nostallinbeta.ui.activities.AboutActivity;
 import nostallin.com.nostallinbeta.ui.activities.ContactActivity;
 import nostallin.com.nostallinbeta.ui.activities.FaqActivity;
-import nostallin.com.nostallinbeta.ui.activities.InfoActivity;
-import nostallin.com.nostallinbeta.ui.activities.InfoAvailableActivity;
 import nostallin.com.nostallinbeta.ui.activities.MainActivity;
+import nostallin.com.nostallinbeta.ui.placeinfo.PlaceInfoSurveyActivity;
 
 /**
  * Class that handles navagation from the {@link MainActivity}
@@ -33,13 +33,16 @@ public class MainNavigator {
     }
 
     public void goToInfoActivity(Place place) {
+        PlaceStub stub = new PlaceStub(place.getId(), place.getAddress().toString(), place.getName().toString());
 
-        context.startActivity(generateIntent(place, InfoActivity.class));
+        PlaceInfoSurveyActivity.startActivity(context, stub);
     }
 
     public void goToInfoAvailableActivity(Place place) {
 
-        context.startActivity(generateIntent(place, InfoAvailableActivity.class));
+        PlaceStub stub = new PlaceStub(place.getId(), place.getAddress().toString(), place.getName().toString());
+
+        PlaceInfoSurveyActivity.startActivity(context, stub);
     }
 
     public void goToAboutActivity() {

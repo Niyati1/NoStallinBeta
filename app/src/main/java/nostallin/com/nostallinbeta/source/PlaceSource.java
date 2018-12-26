@@ -23,23 +23,21 @@ public class PlaceSource {
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference databaseRef = database.getReference().child("locations");
 
-    private PublishSubject<Place> placeSubject = PublishSubject.create();
+    private PublishSubject<Boolean> placeSubject = PublishSubject.create();
 
-    public Observable<Place> get(final String id) {
+    public Observable<Boolean> get(final String id) {
         databaseRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 boolean wasFound = false;
                 for (DataSnapshot obj : dataSnapshot.getChildren()) {
                     if (obj.getKey() != null && obj.getKey().equalsIgnoreCase(id)) {
-                        placeSubject.onNext(Objects.requireNonNull(obj.getValue(Place.class)));
+
                         wasFound = true;
                     }
                 }
 
-                if (!wasFound) {
-                    placeSubject.onError(new RuntimeException());
-                }
+                placeSubject.onNext(wasFound);
             }
 
             @Override

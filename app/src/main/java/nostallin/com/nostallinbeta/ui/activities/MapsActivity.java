@@ -24,6 +24,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import nostallin.com.nostallinbeta.R;
+import nostallin.com.nostallinbeta.model.PlaceStub;
+import nostallin.com.nostallinbeta.ui.placeinfo.PlaceInfoSurveyActivity;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
 
@@ -137,11 +139,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onInfoWindowClick(Marker marker) {
         if(check==1) {
-            Intent i = new Intent(this, InformationActivity.class);
-            i.putExtra("Name", Name);
-            i.putExtra("Id", Id);
-            i.putExtra("Add", add);
-            startActivity(i);
+            PlaceStub stub = new PlaceStub(Id, Name, add);
+            PlaceInfoSurveyActivity.startActivity(this, stub);
         }
     }
     @Override

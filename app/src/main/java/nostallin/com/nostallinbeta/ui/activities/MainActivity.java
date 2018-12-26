@@ -11,13 +11,11 @@ import android.widget.Button;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
 
-import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import nostallin.com.nostallinbeta.R;
 import nostallin.com.nostallinbeta.navigator.MainNavigator;
 import nostallin.com.nostallinbeta.source.PlaceSource;
-import nostallin.com.nostallinbeta.usecase.CheckIfPlaceExistsUseCase;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,14 +27,14 @@ public class MainActivity extends AppCompatActivity {
 
     // region Views
 
-    private Button lokkingButton;
+    private Button lookingButton;
     private Button wentButton;
 
     // endregion
 
     // region Private Members
 
-    CheckIfPlaceExistsUseCase useCase;
+    PlaceSource source;
     Disposable useCaseDisposable;
     MainNavigator navigator;
 
@@ -49,13 +47,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        useCase = new CheckIfPlaceExistsUseCase(new PlaceSource());
+        source = new PlaceSource();
         navigator = new MainNavigator(this);
 
-        lokkingButton = findViewById(R.id.activity_main_looking);
+        lookingButton = findViewById(R.id.activity_main_looking);
         wentButton = findViewById(R.id.activity_main_went);
 
-        lokkingButton.setOnClickListener(new View.OnClickListener() {
+        lookingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 navigator.goToPlacePicker(PLACE_PICKER_CODE);
@@ -76,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 final Place place = PlacePicker.getPlace(this, data);
 
-                useCaseDisposable = useCase.execute(place.getId())
+                useCaseDisposable = source.get(place.getId())
                         .subscribe(new Consumer<Boolean>() {
                             @Override
                             public void accept(Boolean isPresent) throws Exception {
