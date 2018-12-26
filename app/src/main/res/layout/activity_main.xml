@@ -20,9 +20,10 @@
             android:layout_gravity="center_horizontal"
             android:layout_margin="10dp"
             android:layout_marginTop="25dp"
+            android:fontFamily="@font/raleway_medium"
             android:gravity="center_horizontal|center_vertical"
             android:text="@string/welcome_text"
-            android:textSize="@dimen/TextSize.Heading"
+            android:textSize="@dimen/material_typography_display2"
             android:textStyle="bold" />
 
         <TextView
@@ -30,6 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:fontFamily="@font/raleway_regular"
             android:text="@string/welcome_description"
             android:textSize="@dimen/TextSize.Body" />
 
@@ -44,6 +46,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
+                android:fontFamily="@font/raleway_medium"
                 android:padding="8dp"
                 android:background="@drawable/bg_main_btn"
                 android:text="@string/Main.Button.Looking"
@@ -54,6 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
+                android:fontFamily="@font/raleway_medium"
                 android:padding="8dp"
                 android:background="@drawable/bg_main_btn"
                 android:text="@string/Main.Button.Went"
