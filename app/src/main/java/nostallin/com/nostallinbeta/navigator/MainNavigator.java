@@ -14,6 +14,7 @@ import nostallin.com.nostallinbeta.ui.activities.AboutActivity;
 import nostallin.com.nostallinbeta.ui.activities.ContactActivity;
 import nostallin.com.nostallinbeta.ui.activities.FaqActivity;
 import nostallin.com.nostallinbeta.ui.activities.MainActivity;
+import nostallin.com.nostallinbeta.ui.placeinfo.PlaceInfoActivity;
 import nostallin.com.nostallinbeta.ui.placeinfo.PlaceInfoSurveyActivity;
 
 /**
@@ -35,7 +36,7 @@ public class MainNavigator {
     public void goToInfoActivity(Place place) {
         PlaceStub stub = new PlaceStub(place.getId(), place.getAddress().toString(), place.getName().toString());
 
-        PlaceInfoSurveyActivity.startActivity(context, stub);
+        PlaceInfoActivity.startActivity(context, stub);
     }
 
     public void goToInfoAvailableActivity(Place place) {

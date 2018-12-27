@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
     Disposable useCaseDisposable;
     MainNavigator navigator;
 
+    private boolean lookingClicked = false;
+
     // endregion
 
     // region Lifecycle
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         lookingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                lookingClicked = true;
                 navigator.goToPlacePicker(PLACE_PICKER_CODE);
             }
         });
@@ -79,9 +82,13 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void accept(Boolean isPresent) throws Exception {
                                 if (!isPresent) {
-                                    navigator.goToInfoActivity(place);
+                                    if (lookingClicked) {
+                                        navigator.goToInfoActivity(place);
+                                    } else {
+                                        navigator.goToInfoAvailableActivity(place);
+                                    }
                                 } else {
-                                    navigator.goToInfoAvailableActivity(place);
+                                    navigator.goToInfoActivity(place);
 
                                 }
                             }

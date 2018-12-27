@@ -8,13 +8,14 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.text.TextUtils
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_place_info.*
+import kotlinx.android.synthetic.main.activity_place_info_survey.*
 import nostallin.com.nostallinbeta.R
 import nostallin.com.nostallinbeta.model.BathroomInfo
 import nostallin.com.nostallinbeta.model.DoorCount
 import nostallin.com.nostallinbeta.model.PlaceStub
 import nostallin.com.nostallinbeta.model.StallCount
 import nostallin.com.nostallinbeta.ui.ProgressDialogFragment
+import nostallin.com.nostallinbeta.util.SourceException
 
 class PlaceInfoSurveyActivity : AppCompatActivity() {
 
@@ -44,7 +45,9 @@ class PlaceInfoSurveyActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_place_info)
+        setContentView(R.layout.activity_place_info_survey)
+
+        title = placeId.name
 
         stallCountRadioGroup.setOnCheckedChangeListener { _, checkedId ->
             when (checkedId) {
@@ -89,7 +92,9 @@ class PlaceInfoSurveyActivity : AppCompatActivity() {
                         finish()
                     }
                     is PlaceInfoViewModel.BathroomInfoResult.Error -> {
-                        Toast.makeText(this@PlaceInfoSurveyActivity, R.string.PlaceInfo_Success, Toast.LENGTH_LONG).show()
+                        if (it.code != SourceException.SourceExceptionCode.DOES_NOT_EXIST) {
+                            Toast.makeText(this@PlaceInfoSurveyActivity, R.string.PlaceInfo_Error, Toast.LENGTH_LONG).show()
+                        }
                     }
                 }
             }

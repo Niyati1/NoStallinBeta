@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content" >
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
 
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="nostallin.com.nostallinbeta.ui.activities.AboutActivity"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
+        tools:context="nostallin.com.nostallinbeta.ui.activities.AboutActivity"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp">
 
@@ -20,9 +19,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:layout_marginTop="50dp"
-            android:textSize="20dp"
-            android:text="@string/about" />
-
-
+            android:fontFamily="@font/raleway_regular"
+            android:text="@string/about"
+            android:textSize="@dimen/material_typography_body1" />
     </LinearLayout>
 </ScrollView>

@@ -64,6 +64,9 @@
 
         <activity android:name=".ui.placeinfo.PlaceInfoSurveyActivity"
             android:screenOrientation="userPortrait" />
+
+        <activity android:name=".ui.placeinfo.PlaceInfoActivity"
+            android:screenOrientation="userPortrait" />
     </application>
 
 </manifest>

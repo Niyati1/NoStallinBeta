@@ -22,18 +22,41 @@
             android:layout_marginTop="25dp"
             android:fontFamily="@font/raleway_medium"
             android:gravity="center_horizontal|center_vertical"
-            android:text="@string/welcome_text"
+            android:text="@string/Onboarding.Welcome.Title"
             android:textSize="@dimen/material_typography_display2"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/activity_main_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:fontFamily="@font/raleway_regular"
-            android:text="@string/welcome_description"
-            android:textSize="@dimen/TextSize.Body" />
+            android:text="@string/Onboarding.Welcome.FirstDescription"
+            android:textSize="@dimen/material_typography_body1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/raleway_regular"
+            android:text="@string/Onboarding.Welcome.SecondDescription"
+            android:textSize="@dimen/material_typography_body1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/raleway_regular"
+            android:text="@string/Onboarding.Welcome.ThirdDescription"
+            android:textSize="@dimen/material_typography_body1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/raleway_regular"
+            android:text="@string/Onboarding.Welcome.FourthDescription"
+            android:textSize="@dimen/material_typography_body1" />
 
         <LinearLayout
             android:layout_width="match_parent"

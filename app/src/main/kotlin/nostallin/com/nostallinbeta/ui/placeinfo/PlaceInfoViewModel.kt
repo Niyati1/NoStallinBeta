@@ -5,6 +5,7 @@ import android.arch.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable
 import nostallin.com.nostallinbeta.model.BathroomInfo
 import nostallin.com.nostallinbeta.source.BathroomInfoSource
+import nostallin.com.nostallinbeta.util.SourceException
 import nostallin.com.nostallinbeta.util.ioToMain
 import nostallin.com.nostallinbeta.util.plusAssign
 
@@ -18,20 +19,20 @@ class PlaceInfoViewModel : ViewModel() {
     fun fetchBathroomInfo(id: String) {
         disposable += bathroomInfoSource.getPlaceById(id)
                 .ioToMain()
-                .subscribe({ placeLivedata.value = BathroomInfoResult.Info(it)}, { placeLivedata.value = BathroomInfoResult.Error })
+                .subscribe({ placeLivedata.value = BathroomInfoResult.Info(it)}, { placeLivedata.value = BathroomInfoResult.Error((it as SourceException).code) })
     }
 
     fun uploadBathroomInfo(bathroomInfo: BathroomInfo) {
         disposable += bathroomInfoSource.uploadBathroomInfo(bathroomInfo)
                 .ioToMain()
-                .subscribe({ placeLivedata.value = BathroomInfoResult.UploadSuccess }, { placeLivedata.value = BathroomInfoResult.Error })
+                .subscribe({ placeLivedata.value = BathroomInfoResult.UploadSuccess }, { placeLivedata.value = BathroomInfoResult.Error((it as SourceException).code) })
     }
 
     fun updateBathroomInfo(bathroomInfo: BathroomInfo) {
         disposable += bathroomInfoSource.uploadBathroomInfo(bathroomInfo)
                 .ioToMain()
                 .subscribe({ placeLivedata.value = BathroomInfoResult.UpdateSuccess },
-                        { placeLivedata.value = BathroomInfoResult.Error })
+                        { placeLivedata.value = BathroomInfoResult.Error((it as SourceException).code) })
     }
 
     override fun onCleared() {
@@ -50,6 +51,6 @@ class PlaceInfoViewModel : ViewModel() {
 
         object UpdateSuccess : BathroomInfoResult()
 
-        object Error : BathroomInfoResult()
+        class Error(val code: SourceException.SourceExceptionCode) : BathroomInfoResult()
     }
 }
