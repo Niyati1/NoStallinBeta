@@ -50,9 +50,6 @@
         <activity android:name=".ui.OnboardingActivity"
             android:screenOrientation="userPortrait"/>
 
-        <activity android:name=".ui.activities.AfterSubmitActivity"
-            android:screenOrientation="userPortrait"/>
-
         <activity android:name=".ui.activities.AboutActivity"
             android:screenOrientation="userPortrait"/>
 

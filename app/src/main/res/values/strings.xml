@@ -49,6 +49,7 @@
     <string name="PlaceInfo.Title.Address">Address</string>
     <string name="PlaceInfo.Title.Confirm">Is this information correct?</string>
     <string name="PlaceInfo.Button.Add">Add Info</string>
+    <string name="Contact.SendFeedback">Send Feedback</string>
     <!--endregion-->
 
 </resources>

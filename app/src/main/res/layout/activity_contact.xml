@@ -24,5 +24,18 @@
             android:textSize="@dimen/material_typography_title"
             android:gravity="center"
             android:text="@string/contact" />
+
+        <Button
+            android:id="@+id/activity_contact_sendFeedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/material_layout_keylines_screen_edge_margin"
+            android:layout_marginEnd="@dimen/material_layout_keylines_screen_edge_margin"
+            android:background="@drawable/bg_main_btn"
+            android:fontFamily="@font/raleway_medium"
+            android:text="@string/Contact.SendFeedback"
+            android:textSize="@dimen/material_typography_button"
+            android:textColor="@color/md_white"/>
+
     </LinearLayout>
 </ScrollView>
